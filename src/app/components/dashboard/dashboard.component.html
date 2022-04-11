@@ -145,9 +145,24 @@
                 ></apx-chart>
               </div> -->
 
-                    <highcharts-chart *ngIf="chartOptions" [Highcharts]="Highcharts" [options]="chartOptions"
-                        style="width: 100%; height: 400px; display: block;">
-                    </highcharts-chart>
+              <div class="container sample">
+                <div class="options vertical">
+                    <span id="legendTitle">Renewable Electricity Generated</span>
+                    <igx-legend #legend orientation="horizontal"></igx-legend>
+                </div>
+                <div class="container">
+                    <igx-category-chart height="100%" width="100%"
+                        [dataSource]="data"
+                        [legend]="legend"
+                        chartType="line"
+                        yAxisTitle="TWh"
+                        yAxisTitleLeftMargin="5">
+                    </igx-category-chart>
+                </div>
+            </div>
+            
+
+                  
 
                 </div>
             </div><!-- End Left side columns -->

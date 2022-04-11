@@ -14,9 +14,12 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { AuthService } from './shared/services/auth.service';
-import {
-  HighchartsChartModule
-} from "highcharts-angular";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { 
+	IgxCategoryChartModule,
+	IgxLegendModule
+ } from "igniteui-angular-charts";
 
 @NgModule({
   declarations: [
@@ -33,9 +36,12 @@ import {
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
-    HighchartsChartModule
+    BrowserAnimationsModule,
+    IgxCategoryChartModule,
+    IgxLegendModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
