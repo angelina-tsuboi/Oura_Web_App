@@ -60,14 +60,6 @@ export class AuthService {
         window.alert(error.message);
       });
   }
-  // Send email verfificaiton when new user sign up
-  SendVerificationMail() {
-    return this.afAuth.currentUser
-      .then((u: any) => u.sendEmailVerification())
-      .then(() => {
-        this.router.navigate(['verify-email-address']);
-      });
-  }
   // Reset Forggot password
   ForgotPassword(passwordResetEmail: string) {
     return this.afAuth
