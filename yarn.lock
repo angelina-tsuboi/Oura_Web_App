@@ -164,7 +164,7 @@
     "universal-analytics" "0.4.23"
     "uuid" "8.3.2"
 
-"@angular/common@^9.0.0 || ^10.0.0 || ^11.0.0", "@angular/common@~11.2.10", "@angular/common@11.2.14":
+"@angular/common@^9.0.0 || ^10.0.0 || ^11.0.0", "@angular/common@>=9.0.0", "@angular/common@~11.2.10", "@angular/common@11.2.14":
   "integrity" "sha512-ZSLV/3j7eCTyLf/8g4yBFLWySjiLz3vLJAGWscYoUpnJWMnug1VRu6zoF/COxCbtORgE+Wz6K0uhfS6MziBGVw=="
   "resolved" "https://registry.npmjs.org/@angular/common/-/common-11.2.14.tgz"
   "version" "11.2.14"
@@ -204,7 +204,7 @@
   "resolved" "https://registry.npmjs.org/@angular/compiler/-/compiler-9.0.0.tgz"
   "version" "9.0.0"
 
-"@angular/core@^9.0.0 || ^10.0.0 || ^11.0.0", "@angular/core@~11.2.10", "@angular/core@11.2.14":
+"@angular/core@^9.0.0 || ^10.0.0 || ^11.0.0", "@angular/core@>=9.0.0", "@angular/core@~11.2.10", "@angular/core@11.2.14":
   "integrity" "sha512-vpR4XqBGitk1Faph37CSpemwIYTmJ3pdIVNoHKP6jLonpWu+0azkchf0f7oD8/2ivj2F81opcIw0tcsy/D/5Vg=="
   "resolved" "https://registry.npmjs.org/@angular/core/-/core-11.2.14.tgz"
   "version" "11.2.14"
@@ -4478,6 +4478,18 @@
   dependencies:
     "inherits" "^2.0.3"
     "minimalistic-assert" "^1.0.1"
+
+"highcharts-angular@^3.0.0":
+  "integrity" "sha512-v2jMlvmzmLqqKVQdsARBewmYaQOL44lmioF9WEseuIF2KyTeZIeUtYbrEqG9uz+/dl0bsDZL6WtUrgCa42D3DQ=="
+  "resolved" "https://registry.npmjs.org/highcharts-angular/-/highcharts-angular-3.0.0.tgz"
+  "version" "3.0.0"
+  dependencies:
+    "tslib" "^2.0.0"
+
+"highcharts@^10.0.0", "highcharts@>=6.0.0":
+  "integrity" "sha512-a14PrTraVaoSNyaRPhLF/jJ3/09rJwfUZedLgZOkzozGz4K/H8WtWNJtUZt/tc5QiJkaZHw4YX7vvuO98s+EoA=="
+  "resolved" "https://registry.npmjs.org/highcharts/-/highcharts-10.0.0.tgz"
+  "version" "10.0.0"
 
 "hmac-drbg@^1.0.1":
   "integrity" "sha1-0nRXAQJabHdabFRXk+1QL8DGSaE="

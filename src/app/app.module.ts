@@ -14,6 +14,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { AuthService } from './shared/services/auth.service';
+import {
+  HighchartsChartModule
+} from "highcharts-angular";
 
 @NgModule({
   declarations: [
@@ -30,6 +33,7 @@ import { AuthService } from './shared/services/auth.service';
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
+    HighchartsChartModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
