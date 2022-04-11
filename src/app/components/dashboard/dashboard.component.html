@@ -48,7 +48,7 @@
                     </div>
                     <div class="ps-3">
                       <h6>145</h6>
-                      <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+                      <span class="text-success small pt-1 fw-bold">Healthy</span> <span class="text-muted small pt-2 ps-1">levels</span>
 
                     </div>
                   </div>
@@ -71,7 +71,7 @@
                     </div>
                     <div class="ps-3">
                       <h6>$3,264</h6>
-                      <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+                      <span class="text-success small pt-1 fw-bold">Healthy</span> <span class="text-muted small pt-2 ps-1">Levels</span>
 
                     </div>
                   </div>
@@ -93,7 +93,7 @@
                     </div>
                     <div class="ps-3">
                       <h6>1244</h6>
-                      <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span>
+                      <span class="text-danger small pt-1 fw-bold">Poor</span> <span class="text-muted small pt-2 ps-1">Levels</span>
 
                     </div>
                   </div>
@@ -103,7 +103,16 @@
 
             </div><!-- End Customers Card -->
 
-
+            <div id="chart">
+                <apx-chart
+                  [series]="chartOptions.series"
+                  [chart]="chartOptions.chart"
+                  [xaxis]="chartOptions.xaxis"
+                  [stroke]="chartOptions.stroke"
+                  [tooltip]="chartOptions.tooltip"
+                  [dataLabels]="chartOptions.dataLabels"
+                ></apx-chart>
+              </div>
 
           </div>
         </div><!-- End Left side columns -->
