@@ -8,7 +8,7 @@ export class FirebaseService {
 
   constructor(public db: AngularFireDatabase) { }
 
-  public getReadings(uid: string): AngularFireList<any>{
-    return this.db.list(`UserData/${uid}/readings`);
+  public getReadings(): AngularFireList<any>{
+    return this.db.list(`UserData`);
   }
 }

@@ -56,13 +56,14 @@ export class DashboardComponent implements OnInit {
     this.getDashboardReadings(uid);
   }
 
+  // TODO: make it uid specific
   getDashboardReadings(uid: string): void {
-    this.firebase.getReadings(uid).snapshotChanges().pipe(
-      map(changes =>
-        changes.map(c =>
-          ({ key: c.payload.key, ...c.payload.val() })
-        )
-      )
+    this.firebase.getReadings().snapshotChanges().pipe(
+      map((products: any[]) => products.map(prod => {
+        const payload = prod.payload.val();
+        const key = prod.key;
+        return <any>{ key, ...payload };
+      })),
     ).subscribe(data => {
       this.sensorData = data;
       console.log("sensor data", this.sensorData);
