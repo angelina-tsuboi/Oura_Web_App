@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { AuthService } from 'src/app/shared/services/auth.service';
-
+import { FirebaseService } from 'src/app/shared/services/firebase.service';
+import { map } from 'rxjs/operators';
 
 
 // import {
@@ -29,8 +31,9 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 })
 export class DashboardComponent implements OnInit {
   public data: any[];
+  public sensorData: any[];
 
-  constructor() {
+  constructor(public fbAuth: AngularFireAuth, private firebase: FirebaseService) {
       this.data = [
           { Year: "2009", Pollution: 31 },
           { Year: "2010", Pollution: 43 },
@@ -46,7 +49,23 @@ export class DashboardComponent implements OnInit {
       ];
   }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    let user  = (await this.fbAuth.currentUser);
+    let uid = user.uid;
+    this.getDashboardReadings(uid);
+  }
+
+  getDashboardReadings(uid: string): void {
+    this.firebase.getReadings(uid).snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c =>
+          ({ key: c.payload.key, ...c.payload.val() })
+        )
+      )
+    ).subscribe(data => {
+      this.sensorData = data;
+      console.log("sensor data", this.sensorData);
+    });
   }
 
 }
