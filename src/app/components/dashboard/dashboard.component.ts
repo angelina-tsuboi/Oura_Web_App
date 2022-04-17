@@ -42,7 +42,7 @@ export class DashboardComponent implements OnInit {
           { Year: "2016", Pollution: 13 },
           { Year: "2017", Pollution: 78 },
           { Year: "2018", Pollution: 40 },
-          { Year: "2019", Pollution: 80 },
+          { Year: new Date(parseInt("1649646270") * 1000).toLocaleString(), Pollution: 80 },
       ];
   }
 

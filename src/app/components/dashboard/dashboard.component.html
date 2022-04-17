@@ -49,8 +49,7 @@
                                     </div>
                                     <div class="ps-3">
                                         <h6>145</h6>
-                                        <span class="text-success small pt-1 fw-bold">Healthy</span> <span
-                                            class="text-muted small pt-2 ps-1">levels</span>
+
 
                                     </div>
                                 </div>
@@ -75,8 +74,6 @@
                                     </div>
                                     <div class="ps-3">
                                         <h6>3,264</h6>
-                                        <span class="text-success small pt-1 fw-bold">Healthy</span> <span
-                                            class="text-muted small pt-2 ps-1">Levels</span>
 
                                     </div>
                                 </div>
@@ -99,8 +96,6 @@
                                     </div>
                                     <div class="ps-3">
                                         <h6>1244</h6>
-                                        <span class="text-danger small pt-1 fw-bold">Poor</span> <span
-                                            class="text-muted small pt-2 ps-1">Levels</span>
 
                                     </div>
                                 </div>
@@ -173,11 +168,11 @@
 
               <div class="container sample">
                 <div class="options vertical">
-                    <span id="legendTitle">Air Quality (PPM) over Time</span>
+                    <span id="legendTitle">Air Quality over Time</span>
                     <igx-legend #legend orientation="horizontal"></igx-legend>
                 </div>
                 <div class="container">
-                    <igx-category-chart height="100%" width="100%"
+                    <igx-category-chart height="500px" width="80vw"
                         [dataSource]="data"
                         [legend]="legend"
                         chartType="line"
@@ -186,7 +181,7 @@
                         markerBrushes =  "white"
                         markerOutlines="#ee5879"
                         markerTypes="Circle"
-                        yAxisTitle="TWh"
+                        yAxisTitle="PPM"
                         yAxisTitleLeftMargin="5">
                     </igx-category-chart>
                 </div>
