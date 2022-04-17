@@ -33,7 +33,7 @@ export class DashboardComponent implements OnInit {
   public data: any[];
   public sensorData: any[];
 
-  constructor(public fbAuth: AngularFireAuth, private firebase: FirebaseService) {
+  constructor(private firebase: FirebaseService, private authService: AuthService) {
       this.data = [
           { Year: "2009", Pollution: 31 },
           { Year: "2010", Pollution: 43 },
@@ -50,8 +50,9 @@ export class DashboardComponent implements OnInit {
   }
 
   async ngOnInit() {
-    let user  = (await this.fbAuth.currentUser);
-    let uid = user.uid;
+    console.log("user uid: ", JSON.parse(localStorage.getItem('user')!))
+    let uid = JSON.parse(localStorage.getItem('user')!).uid;
+    
     this.getDashboardReadings(uid);
   }
 
