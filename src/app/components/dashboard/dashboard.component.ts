@@ -56,9 +56,8 @@ export class DashboardComponent implements OnInit {
     this.getDashboardReadings(uid);
   }
 
-  // TODO: make it uid specific
   getDashboardReadings(uid: string): void {
-    this.firebase.getReadings().snapshotChanges().pipe(
+    this.firebase.getReadings(uid).snapshotChanges().pipe(
       map((products: any[]) => products.map(prod => {
         const payload = prod.payload.val();
         const key = prod.key;
