@@ -20,13 +20,15 @@ import {
 	IgxCategoryChartModule,
 	IgxLegendModule
  } from "igniteui-angular-charts";
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
