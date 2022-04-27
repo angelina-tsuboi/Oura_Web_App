@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+* {
+    font-family: 'Karla', sans-serif;
+}
+
+.home {
+    height: 100vh;
+    background: url("../../../assets/img/image_3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    background-color: #9c9c9c;
+}
+
+.logo-home {
+    max-width: 200px;
+}
+
+.centered {
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    position: absolute;
+    width: 100%;
+}
+
+@media screen and (max-width: 640px) {
+    .logo-home {
+        max-width: 150px;
+    }
+}
+
+.nav-link.active {
+    /* background-color: black !important; */
+}
+
+.bg-dark {
+    background-color: #1f2d3d !important;
+}
+
+.btn-outline-success {
+    color: #59C9A5;
+    border-color: #59C9A5;
+}
+
+.btn-outline-success:hover {
+    background-color: #59C9A5;
+    border-color: #59C9A5;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+p {
+    color: #d3d3d3;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 1200px) {
+    .title-home {
+        font-size: calc(1.5rem + 1vw);
+    }
+}
