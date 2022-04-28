@@ -35,14 +35,14 @@
                 <div *ngIf="isShowingForm && isRegister" class="d-inline-block" style="max-width: 600px;">
                   <div class="mb-5" class="formSection">
                     <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                    <input type="email" required class="form-control" id="exampleFormControlInput1" placeholder="Enter email address" [(ngInput)]="regsiterEmail">
+                    <input type="email" required class="form-control" id="regEmail" placeholder="Enter email address" [(ngModel)]="regsiterEmail">
                     <p class="feedback" *ngIf="registerErrorEmail">
                       Please enter a valid email address
                     </p>
                   </div>
                   <div class="mb-5" class="formSection">
                     <label for="exampleFormControlInput1" class="form-label">Password</label>
-                    <input type="password" required class="form-control" id="exampleFormControlInput1" placeholder="Enter password" [(ngInput)]="registerPassword">
+                    <input type="password" required class="form-control" id="regPass" placeholder="Enter password" [(ngModel)]="registerPassword">
                     <p class="feedback"  *ngIf="registerErrorPassword">
                       Password must be between 8 to 15 characters
                     </p>
@@ -55,14 +55,14 @@
                 <div *ngIf="isShowingForm && !isRegister" class="d-inline-block" style="max-width: 600px;">
                   <div class="mb-5" class="formSection">
                     <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                    <input type="email" required class="form-control" id="exampleFormControlInput1" placeholder="Enter email address" [(ngInput)]="loginEmail">
+                    <input type="email" required class="form-control" id="loginEmail" placeholder="Enter email address" [(ngModel)]="loginEmail">
                     <p class="feedback"  *ngIf="loginErrorEmail">
                       Please enter a valid email address
                     </p>
                   </div>
                   <div class="mb-5" class="formSection">
                     <label for="exampleFormControlInput1" class="form-label">Password</label>
-                    <input type="password" required class="form-control" id="exampleFormControlInput1" placeholder="Enter password" [(ngInput)]="loginPassword">
+                    <input type="password" required class="form-control" id="loginPass" placeholder="Enter password" [(ngModel)]="loginPassword">
                     <p class="feedback"  *ngIf="loginErrorPassword">
                       Password must be between 8 to 15 characters
                     </p>

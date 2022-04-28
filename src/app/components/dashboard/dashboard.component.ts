@@ -56,6 +56,10 @@ export class DashboardComponent implements OnInit {
     this.getDashboardReadings(uid);
   }
 
+  signOut() {
+    this.authService.SignOut()
+  }
+
   getDashboardReadings(uid: string): void {
     this.firebase.getReadings(uid).snapshotChanges().pipe(
       map((products: any[]) => products.map(prod => {

@@ -21,6 +21,7 @@ import {
 	IgxLegendModule
  } from "igniteui-angular-charts";
 import { HomeComponent } from './components/home/home.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { HomeComponent } from './components/home/home.component';
     AngularFireDatabaseModule,
     BrowserAnimationsModule,
     IgxCategoryChartModule,
-    IgxLegendModule
+    IgxLegendModule,
+    FormsModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
