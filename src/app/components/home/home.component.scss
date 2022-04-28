@@ -10,10 +10,18 @@
     background-repeat: no-repeat;
     background-blend-mode: multiply;
     background-color: #9c9c9c;
+    color: white;
 }
 
-.logo-home {
-    max-width: 200px;
+.title {
+    margin-top: 1rem;
+    margin-bottom: 0rem;
+    font-size: 4rem;
+}
+
+.logo {
+    max-width: 210px;
+    margin-bottom: 0px !important;
 }
 
 .centered {
@@ -25,27 +33,9 @@
 }
 
 @media screen and (max-width: 640px) {
-    .logo-home {
+    .logo {
         max-width: 150px;
     }
-}
-
-.nav-link.active {
-    /* background-color: black !important; */
-}
-
-.bg-dark {
-    background-color: #1f2d3d !important;
-}
-
-.btn-outline-success {
-    color: #59C9A5;
-    border-color: #59C9A5;
-}
-
-.btn-outline-success:hover {
-    background-color: #59C9A5;
-    border-color: #59C9A5;
 }
 
 h1 {
@@ -55,13 +45,12 @@ h1 {
 p {
     color: #d3d3d3;
 }
-
-.hidden {
-    display: none;
-}
-
 @media (max-width: 1200px) {
-    .title-home {
-        font-size: calc(1.5rem + 1vw);
+    .title {
+        font-size: calc(3.5rem + 1vw);
+    }
+
+    .logo {
+        max-width: 200px;
     }
 }
