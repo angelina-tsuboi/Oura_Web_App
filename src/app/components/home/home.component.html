@@ -16,8 +16,8 @@
         <a class="nav-link" href="mailto:atsuboi2024@chadwickschool.org" target="_blank">Contact</a>
       </div>
       <div class="navbar-nav ms-auto">
-        <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#exampleModalCenter"> 
-          Sign Up / Log In
+        <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#exampleModalCenter" (click)="toggleForm()"> 
+          Register an Account
         </button>
       </div>
     </div>
@@ -29,9 +29,36 @@
             <div class="mx-auto text-center">
                 <img src="../../../assets/img/logo_white.png" class="logo mb-4">
                 <h1 class="title">Oura</h1>
-                <span class="d-inline-block text-wrap" style="max-width: 400px;">
+                <span class="d-inline-block text-wrap" style="max-width: 400px;" *ngIf="!isShowingForm">
                     Oura is a tailorable, portable, and inexpensive indoor air quality (IAQ) monitoring device with customizable features for the immunocompromised and those living in vulnerable areas. Oura also includes a complimentary app that utilizes machine learning to tailor the detector to its user based on health conditions and sends air quality notifications to any of the user's caregivers.
                 </span>
+                <div *ngIf="isShowingForm && isRegister" class="d-inline-block" style="max-width: 600px;">
+                  <div class="mb-5" class="formSection">
+                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                    <input type="email" required class="form-control" id="exampleFormControlInput1" placeholder="Enter email address">
+                  </div>
+                  <div class="mb-5" class="formSection">
+                    <label for="exampleFormControlInput1" class="form-label">Password</label>
+                    <input type="password" required class="form-control" id="exampleFormControlInput1" placeholder="Enter password">
+                  </div>
+
+                  <button type="button" class="btn btn-outline-light" style="margin-top: 1rem;">Register Account</button>
+                  <p class="h6">Already have an account? <a href="#" (click)="toggleRegister()">Login</a> </p>
+                </div>
+
+                <div *ngIf="isShowingForm && !isRegister" class="d-inline-block" style="max-width: 600px;">
+                  <div class="mb-5" class="formSection">
+                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                    <input type="email" required class="form-control" id="exampleFormControlInput1" placeholder="Enter email address">
+                  </div>
+                  <div class="mb-5" class="formSection">
+                    <label for="exampleFormControlInput1" class="form-label">Password</label>
+                    <input type="password" required class="form-control" id="exampleFormControlInput1" placeholder="Enter password">
+                  </div>
+
+                  <button type="button" class="btn btn-outline-light" style="margin-top: 1rem;">Login to Account</button>
+                  <p class="h6">Don't have an account? <a href="#" (click)="toggleRegister()">Register</a> </p>
+                </div>
             </div>
         </div>
     </div>
