@@ -35,28 +35,40 @@
                 <div *ngIf="isShowingForm && isRegister" class="d-inline-block" style="max-width: 600px;">
                   <div class="mb-5" class="formSection">
                     <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                    <input type="email" required class="form-control" id="exampleFormControlInput1" placeholder="Enter email address">
+                    <input type="email" required class="form-control" id="exampleFormControlInput1" placeholder="Enter email address" [(ngInput)]="regsiterEmail">
+                    <p class="feedback" *ngIf="registerErrorEmail">
+                      Please enter a valid email address
+                    </p>
                   </div>
                   <div class="mb-5" class="formSection">
                     <label for="exampleFormControlInput1" class="form-label">Password</label>
-                    <input type="password" required class="form-control" id="exampleFormControlInput1" placeholder="Enter password">
+                    <input type="password" required class="form-control" id="exampleFormControlInput1" placeholder="Enter password" [(ngInput)]="registerPassword">
+                    <p class="feedback"  *ngIf="registerErrorPassword">
+                      Password must be between 8 to 15 characters
+                    </p>
                   </div>
 
-                  <button type="button" class="btn btn-outline-light" style="margin-top: 1rem;">Register Account</button>
+                  <button type="button" class="btn btn-outline-light" style="margin-top: 1rem;" (click)="register()">Register Account</button>
                   <p class="h6">Already have an account? <a href="#" (click)="toggleRegister()">Login</a> </p>
                 </div>
 
                 <div *ngIf="isShowingForm && !isRegister" class="d-inline-block" style="max-width: 600px;">
                   <div class="mb-5" class="formSection">
                     <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                    <input type="email" required class="form-control" id="exampleFormControlInput1" placeholder="Enter email address">
+                    <input type="email" required class="form-control" id="exampleFormControlInput1" placeholder="Enter email address" [(ngInput)]="loginEmail">
+                    <p class="feedback"  *ngIf="loginErrorEmail">
+                      Please enter a valid email address
+                    </p>
                   </div>
                   <div class="mb-5" class="formSection">
                     <label for="exampleFormControlInput1" class="form-label">Password</label>
-                    <input type="password" required class="form-control" id="exampleFormControlInput1" placeholder="Enter password">
+                    <input type="password" required class="form-control" id="exampleFormControlInput1" placeholder="Enter password" [(ngInput)]="loginPassword">
+                    <p class="feedback"  *ngIf="loginErrorPassword">
+                      Password must be between 8 to 15 characters
+                    </p>
                   </div>
 
-                  <button type="button" class="btn btn-outline-light" style="margin-top: 1rem;">Login to Account</button>
+                  <button type="button" class="btn btn-outline-light" style="margin-top: 1rem;" (click)="login()">Login to Account</button>
                   <p class="h6">Don't have an account? <a href="#" (click)="toggleRegister()">Register</a> </p>
                 </div>
             </div>

@@ -14,13 +14,21 @@ export class HomeComponent implements OnInit {
   public loginEmail: string = "";
   public loginPassword: string = "";
 
+  public loginErrorEmail : boolean = false
+  public loginErrorPassword : boolean = false
+
   // Register
   public regsiterEmail: string = "";
   public registerPassword: string = "";
 
+  public registerErrorEmail : boolean = false
+  public registerErrorPassword : boolean = false
+
   constructor() { }
 
   ngOnInit(): void {
+    this.clearRegister()
+    this.clearLogin()
   }
 
   public toggleForm(){
@@ -32,7 +40,11 @@ export class HomeComponent implements OnInit {
   }
 
   private checkLogin() : boolean {
-    return false;
+    if (this.registerPassword.length < 8 || this.registerPassword.length > 15) {
+      this.registerErrorPassword = true;
+      return false;
+    }
+    return true;
   }
 
   private checkRegister() : boolean {
@@ -42,18 +54,30 @@ export class HomeComponent implements OnInit {
   private clearRegister(){
     this.regsiterEmail = ""
     this.registerPassword = ""
+    this.registerErrorEmail = false
+    this.registerErrorPassword = false
   }
 
   private clearLogin(){
     this.loginEmail = ""
     this.loginPassword = ""
+    this.loginErrorEmail = false
+    this.loginErrorPassword = false
   }
 
   public login(){
+    this.loginErrorEmail = false;
+    this.loginErrorPassword = false;
+    if(this.checkLogin()){
 
+    }
   }
 
   public register(){
+    this.registerErrorEmail = false;
+    this.registerErrorPassword = false;
+    if(this.checkRegister()){
 
+    }
   }
 }
