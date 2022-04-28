@@ -11,8 +11,6 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { SignInComponent } from './components/sign-in/sign-in.component';
-import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { AuthService } from './shared/services/auth.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -27,8 +25,6 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     DashboardComponent,
-    SignInComponent,
-    SignUpComponent,
     HomeComponent
   ],
   imports: [
