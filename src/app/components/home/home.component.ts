@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -24,7 +25,7 @@ export class HomeComponent implements OnInit {
   public registerErrorEmail : boolean = false
   public registerErrorPassword : boolean = false
 
-  constructor() { }
+  constructor(public authService: AuthService) { }
 
   ngOnInit(): void {
     this.clearRegister()
@@ -69,7 +70,7 @@ export class HomeComponent implements OnInit {
     this.loginErrorEmail = false;
     this.loginErrorPassword = false;
     if(this.checkLogin()){
-
+      this.authService.SignIn(this.loginEmail, this.loginPassword);
     }
   }
 
@@ -77,7 +78,7 @@ export class HomeComponent implements OnInit {
     this.registerErrorEmail = false;
     this.registerErrorPassword = false;
     if(this.checkRegister()){
-
+      this.authService.SignUp(this.regsiterEmail, this.registerPassword);
     }
   }
 }
